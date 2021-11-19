@@ -1,7 +1,9 @@
 import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
 
+import { IMutation, IQuery } from "./types";
+
 @Resolver()
-export class HelloResolver {
+export class HelloResolver implements Pick<IQuery, "hello">, Pick<IMutation, "setMessage"> {
     #message = "Hello,World!";
 
     @Query(() => String)

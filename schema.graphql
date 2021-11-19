@@ -1,0 +1,14 @@
+type Todo {
+    id: ID!
+    title: String!
+}
+
+type Query {
+    "メッセージを返す"
+    hello: String!
+}
+
+type Mutation {
+    "メッセージ変更"
+    setMessage(message: String!): String!
+}
